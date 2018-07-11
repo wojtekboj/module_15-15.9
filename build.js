@@ -1,49 +1,12 @@
 "use strict";
 
-var _createClass = function () {
-    function defineProperties(target, props) {
-        for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];
-            descriptor.enumerable = descriptor.enumerable || false;
-            descriptor.configurable = true;
-            if ("value" in descriptor) descriptor.writable = true;
-            Object.defineProperty(target, descriptor.key, descriptor);
-        }
-    }
-    return function (Constructor, protoProps, staticProps) {
-        if (protoProps) defineProperties(Constructor.prototype, protoProps);
-        if (staticProps) defineProperties(Constructor, staticProps);
-        return Constructor;
-    };
-}();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-        throw new TypeError("Cannot call a class as a function");
-    }
-}
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _possibleConstructorReturn(self, call) {
-    if (!self) {
-        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-}
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-        throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-        constructor: {
-            value: subClass,
-            enumerable: false,
-            writable: true,
-            configurable: true
-        }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-}
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var App = function (_React$Component) {
     _inherits(App, _React$Component);
@@ -79,9 +42,7 @@ var App = function (_React$Component) {
             fetch(url).then(function (response) {
                 return response.json();
             }).then(function (responseJson) {
-                return _this2.setState({
-                    users: responseJson.items
-                });
+                return _this2.setState({ users: responseJson.items });
             });
         }
     }, {
@@ -93,33 +54,23 @@ var App = function (_React$Component) {
                 "div",
                 null,
                 React.createElement(
-                    "form", {
-                        onSubmit: function onSubmit(event) {
+                    "form",
+                    { onSubmit: function onSubmit(event) {
                             return _this3.onSubmit(event);
-                        }
-                    },
+                        } },
                     React.createElement(
-                        "label", {
-                            htmlFor: "searchText"
-                        },
+                        "label",
+                        { htmlFor: "searchText" },
                         " Search by user name "
                     ),
-                    " ",
-                    React.createElement("input", {
-                        type: "text",
+                    React.createElement("input", { type: "text",
                         id: "searchText",
                         onChange: function onChange(event) {
                             return _this3.onChangeHandle(event);
                         },
-                        value: this.state.searchText
-                    }),
-                    " "
+                        value: this.state.searchText })
                 ),
-                " ",
-                React.createElement(UsersList, {
-                    users: this.state.users
-                }),
-                " "
+                React.createElement(UsersList, { users: this.state.users })
             );
         }
     }]);
@@ -140,22 +91,16 @@ var UsersList = function (_React$Component2) {
         key: "render",
         value: function render() {
             return React.createElement(
-                "div", {
-                    className: "listOfUsers"
-                },
-                " ",
-                this.users,
-                " "
+                "div",
+                { className: "listOfUsers" },
+                this.users
             );
         }
     }, {
         key: "users",
         get: function get() {
             return this.props.users.map(function (user) {
-                return React.createElement(User, {
-                    key: user.id,
-                    user: user
-                });
+                return React.createElement(User, { key: user.id, user: user });
             });
         }
     }]);
@@ -176,26 +121,17 @@ var User = function (_React$Component3) {
         key: "render",
         value: function render() {
             return React.createElement(
-                "div", {
-                    className: "users"
-                },
-                React.createElement("img", {
-                    src: this.props.user.avatar_url,
-                    style: {
-                        maxWidth: '100px'
-                    }
-                }),
+                "div",
+                { className: "users" },
+                React.createElement("img", { src: this.props.user.avatar_url, style: { maxWidth: '100px' } }),
                 React.createElement("br", null),
                 React.createElement(
-                    "a", {
-                        href: this.props.user.html_url,
-                        target: "_blank"
-                    },
+                    "a",
+                    { href: this.props.user.html_url, target: "_blank" },
                     " ",
                     this.props.user.login,
                     " "
-                ),
-                " "
+                )
             );
         }
     }]);
