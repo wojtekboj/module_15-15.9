@@ -128,9 +128,7 @@ var User = function (_React$Component3) {
                 React.createElement(
                     "a",
                     { href: this.props.user.html_url, target: "_blank" },
-                    " ",
-                    this.props.user.login,
-                    " "
+                    this.props.user.login
                 )
             );
         }

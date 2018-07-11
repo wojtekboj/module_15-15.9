@@ -27,14 +27,14 @@ class App extends React.Component {
     render() {
         return ( 
             <div>
-                <form onSubmit = {event => this.onSubmit(event)} >
-                    <label htmlFor = "searchText" > Search by user name < /label> 
-                    <input type = "text"
-                    id = "searchText"
-                    onChange = {event => this.onChangeHandle(event)}
-                    value = {this.state.searchText}/>
+                <form onSubmit={event => this.onSubmit(event)} >
+                    <label htmlFor="searchText" > Search by user name < /label> 
+                    <input type="text"
+                    id="searchText"
+                    onChange={event => this.onChangeHandle(event)}
+                    value={this.state.searchText}/>
                 </form>
-                <UsersList users = {this.state.users}/>
+                <UsersList users={this.state.users}/>
             </div>
         );
     }
@@ -59,10 +59,10 @@ class UsersList extends React.Component {
                 return ( 
                     <div className={"users"}>
                         <img src={this.props.user.avatar_url} style={{maxWidth: '100px'}}/><br/>
-                        <a href={this.props.user.html_url} target="_blank" > {this.props.user.login} < /a> 
+                        <a href={this.props.user.html_url} target="_blank" >{this.props.user.login}</a> 
                     </div >
                 );
             }
         }
 
-        ReactDOM.render( < App / > , document.getElementById('root'));
+        ReactDOM.render( <App/> , document.getElementById('root'));
