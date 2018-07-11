@@ -1,0 +1,18 @@
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.listOfUsers {
+    width: 350px;
+    padding-top: 30px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.users {
+    margin-top: 10px;
+    border: 1px solid #000;
+    padding: 10px 0;
+    border-radius: 3px;
+}
