@@ -35,7 +35,7 @@ class App extends React.Component {
                     value={this.state.searchText}/>
                 </form>
                 <UsersList users={this.state.users}/>
-            </div>
+            </div>;
         );
     }
 }
@@ -65,4 +65,4 @@ class UsersList extends React.Component {
             }
         }
 
-        ReactDOM.render( <App/> , document.getElementById('root'));
+        ReactDOM.render( <App/>; , document.getElementById('root'));
